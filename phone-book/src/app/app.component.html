@@ -1,0 +1,23 @@
+<h3>Phone Book <button (click)="onAddContact()">New contact</button></h3>
+<div>
+  <table border="1">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Numbers</th>
+      <th>Operations</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let contact of contacts">
+      <td>{{contact.name}}</td>
+      <td>{{contact.numbers.join(', ')}}</td>
+      <td>
+        <button (click)="onAddNumber(contact)">Add number</button>
+        <button (click)="onEdit(contact)">Edit</button>
+        <button (click)="onDelete(contact)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
